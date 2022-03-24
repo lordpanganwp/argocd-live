@@ -1,0 +1,17 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: hello-world
+spec:
+  components:
+    - name: hello-world
+      type: webservice
+      properties:
+        image: nginxdemos/hello
+        port: 80
+      traits:
+        - type: gateway
+          properties:
+            domain: localhost
+            http:
+              "/": 80
