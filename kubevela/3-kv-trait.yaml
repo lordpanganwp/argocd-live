@@ -1,0 +1,18 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: hello-whale
+spec:
+  components:
+    - name: hello-whale
+      type: webservice
+      properties:
+        image: crccheck/hello-world
+        port: 8000
+      traits:
+        - type: gatewayv2
+          properties:
+            domain: localhost
+            http:
+              "/foo": 8000
+            rewritePath: /
