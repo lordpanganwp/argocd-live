@@ -9,12 +9,12 @@ spec:
       properties:
         image: tykola/hello-spring:argocd
         port: 8000
-      traits:
-        - type: storage
-          properties:
-            configMap:
-              - name: argocd-properties
-                # Mount ConfigMap to Env
-                mountToEnv:
-                  envName: ENV_PREFIX
-                  configMapKey: env.prefix
+      # traits:
+      #   - type: storage
+      #     properties:
+      #       configMap:
+      #         - name: argocd-properties
+      #           # Mount ConfigMap to Env
+      #           mountToEnv:
+      #             envName: ENV_PREFIX
+      #             configMapKey: env.prefix
