@@ -1,17 +1,17 @@
 apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
-  name: sample-app
+  name: hello-world
 spec:
   components:
-    - name: sample-app
+    - name: hello-world
       type: webservice
       properties:
-        image: tykola/hello-spring:argocd
-        port: 8080
+        image: nginxdemos/hello
+        port: 80
       traits:
         - type: gateway
           properties:
             domain: localhost
             http:
-              "/": 8080
+              "/": 80
