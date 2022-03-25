@@ -9,3 +9,9 @@ spec:
       properties:
         image: tykola/hello-spring:argocd
         port: 8080
+      traits:
+        - type: gateway
+          properties:
+            domain: localhost
+            http:
+              "/": 80
