@@ -1,17 +1,17 @@
 apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
-  name: hello-world
+  name: hello-whale
 spec:
   components:
-    - name: hello-world
+    - name: hello-whale
       type: webservice
       properties:
-        image: nginxdemos/hello
-        port: 80
+        image: crccheck/hello-world
+        port: 8000
       traits:
         - type: gateway
           properties:
             domain: localhost
             http:
-              "/": 80
+              "/": 8000
