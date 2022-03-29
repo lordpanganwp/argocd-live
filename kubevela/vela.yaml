@@ -8,10 +8,10 @@ spec:
       type: webservice
       properties:
         image: crccheck/hello-world
-        port: 80
+        port: 8000
       traits:
         - type: gateway
           properties:
             domain: localhost
             http:
-              "/": 80
+              "/": 8000
