@@ -1,0 +1,28 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: sample-app
+spec:
+  components:
+    - name: sample-app
+      type: webservice
+      properties:
+        image: tykola/hello-spring:argocd
+        port: 8080
+      traits:
+        - type: storage
+          properties:
+            configMap:
+              - name: argocd-properties
+                mountOnly: false
+                mountPath: /dumps
+                # Mount ConfigMap to Env
+                mountToEnv:
+                  envName: ENV_PREFIX
+                  configMapKey: env.prefix
+        - type: gatewayv2
+          properties:
+            domain: localhost
+            http:
+              "/bar": 8080
+            rewritePath: /
