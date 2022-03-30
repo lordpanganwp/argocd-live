@@ -10,6 +10,9 @@ spec:
         image: tykola/hello-spring:argocd
         port: 8080
       traits:
+        - type: annotations
+          properties:
+            configmap.reloader.stakater.com/reload: "argocd-properties"
         - type: storage
           properties:
             configMap:
