@@ -15,7 +15,6 @@ spec:
             configMap:
               - name: argocd-properties
                 mountOnly: false
-                mountPath: /dumps
                 # Mount ConfigMap to Env
                 mountToEnv:
                   envName: ENV_PREFIX
