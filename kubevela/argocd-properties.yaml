@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: argocd-properties
 data:                      # "config: |" key is optional in 2.7+!
-  game.properties: |
+  argocd.properties: |
     env.prefix=Dev

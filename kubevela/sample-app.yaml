@@ -8,8 +8,6 @@ spec:
       type: webservice
       properties:
         image: tykola/hello-spring:argocd
-        annotations:
-        checksum/config: {{ include (print "/argocd.properties") . | sha256sum }}
         port: 8080
       traits:
         - type: storage
