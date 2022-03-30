@@ -7,11 +7,11 @@ spec:
     - name: hello-world
       type: webservice
       properties:
-        image: crccheck/hello-world
-        port: 8000
+        image: nginxdemos/hello
+        port: 80
       traits:
         - type: gateway
           properties:
             domain: localhost
             http:
-              "/": 8000
+              "/": 80
