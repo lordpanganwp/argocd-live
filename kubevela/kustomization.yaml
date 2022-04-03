@@ -11,5 +11,8 @@ namespace: default
 resources:
 - sample-app.yaml
 
+images: 
+- tykola/hello-spring:dev-2
+
 generatorOptions:
   disableNameSuffixHash: true
