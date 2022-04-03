@@ -11,5 +11,17 @@ namespace: default
 resources:
 - sample-app.yaml
 
+patches:
+  - patch: |-
+      apiVersion: core.oam.dev/v1beta1
+      kind: Application
+      metadata:
+        name: sample-app
+      spec:
+        components:
+          - name: sample-app
+            properties:
+              image: '$namespace'
+
 generatorOptions:
   disableNameSuffixHash: true
