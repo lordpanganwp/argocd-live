@@ -1,3 +1,9 @@
 kustomize:
-  images:
-  - tykola/hello-spring:qa-1
+  patchesJSON6902:
+  - target:
+      kind: Application
+      name: sample-app
+    patch: |-
+      - op: replace
+        path: /spec/components/0/properties/image
+        value: tykola/hello-spring:qa-1
