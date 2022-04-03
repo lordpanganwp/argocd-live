@@ -7,7 +7,7 @@ spec:
     - name: sample-app
       type: webservice
       properties:
-        image: tykola/hello-spring:argocd
+        image: tykola/hello-spring:dev-1
         port: 8080
       traits:
         - type: annotations
